@@ -2,10 +2,10 @@ const express = require("express");
 const mongoose = require("mongoose");
 
 const app = express();
+require("dotenv/config");
 
 const port = 8080 || process.env.PORT;
-const mongoDbConnectionString =
-  "mongodb+srv://sujatha:sunera07@cluster0.b0rzj.mongodb.net/healthrecord?retryWrites=true&w=majority";
+const mongoDbConnectionString = process.env.MONGODB_CONNECTION_STRING;
 
 const userRouter = require("./routes/user");
 const vitalRouter = require("./routes/healthStat");
